@@ -111,7 +111,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.set('port', process.env.PATH);
+app.set('port', process.env.PORT);
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
