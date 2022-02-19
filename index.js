@@ -3,6 +3,7 @@ const Cheerio = require('cheerio');
 const $ = Cheerio.load('html');
 const mongoClient = require('mongodb').MongoClient;
 
+
 const mongodbURI = "mongodb+srv://admin:jDCxN4CS1WApc5m1@cluster0.jebzx.mongodb.net";
 const url = 'https://www.futbolargentino.com/primera-division/tabla-de-posiciones';
 
@@ -101,7 +102,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.set('port', process.env.PORT);
+app.set('port', 8000) //process.env.PORT);
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
@@ -117,9 +118,6 @@ app.listen(app.get('port'), () => {
 });
 
 
-localStorage.setItem("refreshTime", 10000);
-
-
 setInterval(function(){
   updateDB();
-},localStorage.getItem("refreshTime") || 50000); //default refresh time 50seg.
+},10000); //default refresh time 50seg.
