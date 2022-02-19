@@ -12,7 +12,7 @@
     <table>
         <thead>
             <tr>
-                <th>Pos</th>
+                <th class="hide-mobile">Pos</th>
                 <th>Equipo</th>
                 <th>PJ</th>
                 <th>G</th>
@@ -166,6 +166,13 @@
             text-align: center;
             width: 38px;
         }
+    
+        @media(max-width:400px) { 
+            .hide-mobile{
+                display:none;
+            }
+        }
+        
     </style>
 </body>
 
