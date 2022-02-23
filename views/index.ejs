@@ -3,176 +3,188 @@
 
 <head>
     <title>Tabla de posiciones de Primera Division</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <meta name="description" content="Tabla de Posiciones de la Primera División de Argentina. Temporada Copa de la Liga Profesional 2022. Proyecto Mustan Juan B.">
 </head>
 
 <body>
     <h1>Tabla de Equipos</h1>
-    <div>
-    <table>
-        <thead>
-            <tr>
-                <th class="hide-mobile">Pos</th>
-                <th>Equipo</th>
-                <th>PJ</th>
-                <th>G</th>
-                <th>E</th>
-                <th>P</th>
-                <th>GF</th>
-                <th>GC</th>
-                <th>DG</th>
-                <th>Pts</th>
-            </tr>
-        </thead>
-        <h2>Grupo A</h2>
-        <tbody>
-            <% for(var i=0; i < 14; i++) { %>
-                <tr class="<%= i == 0 || i == 1 ? 'clasifica' : ((i == 12 || i == 13) ? 'no-clasifica': '') %>">
-                    <td class="td-number">
-                        <%= teams[i].position %>
-                    </td>
-                    <td class="td-logo">
-                        <img src="<%= teams[i].imgUrl %>">
-                        <div>
-                            <%= teams[i].team %>
-                        </div>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].PJ %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].G %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].E %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].P %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].GF %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].GC %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].DG %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].points %>
-                    </td>
+    <div class="div-table-content">
+        <div>GRUPO A</div>
+        <table style="border-spacing: 0;">
+            <thead>
+                <tr class="tr-head">
+                    <th class="d-none">Pos</th>
+                    <th>Equipo</th>
+                    <th>PJ</th>
+                    <th>G</th>
+                    <th>E</th>
+                    <th >P</th>
+                    <th class="d-none">GF</th>
+                    <th class="d-none">GC</th>
+                    <th class="d-none">DG</th>
+                    <th>Pts</th>
                 </tr>
-                <% } %>
-                
-        </tbody>
-    </table>
-    <table>
-        <thead>
-            <tr>
-                <th>Pos</th>
-                <th>Equipo</th>
-                <th>PJ</th>
-                <th>G</th>
-                <th>E</th>
-                <th>P</th>
-                <th>GF</th>
-                <th>GC</th>
-                <th>DG</th>
-                <th>Pts</th>
-            </tr>
-        </thead>
-    </div>
-        <h2>Grupo B</h2>
-        <div>
-        <tbody>
-            <% for(var i=14; i < 28; i++) { %>
-                <tr class="<%= i == 14 || i == 15 ? 'clasifica' : ((i == 27 || i == 26) ? 'no-clasifica': '') %>">
-                    <td class="td-number">
-                        <%= teams[i].position %>
-                    </td>
-                    <td class="td-logo">
-                        <img src="<%= teams[i].imgUrl %>">
-                        <div>
-                            <%= teams[i].team %>
-                        </div>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].PJ %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].G %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].E %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].P %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].GF %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].GC %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].DG %>
-                    </td>
-                    <td class="td-number">
-                        <%= teams[i].points %>
-                    </td>
-                </tr>
-                <% } %>
-                
-        </tbody>
-    </table>
-</div>
-    <style>
-       
-        .clasifica{
-            background-color: #00b347;
-        }
-        .no-clasifica {
-            background-color: #f00020;
-        }
+            </thead>
+            <tbody>
+                <% for(var i=0; i < 14; i++) { %>
+                    <tr
+                        class="<%= i==0 || i == 1 ? 'clasifica' : ((i == 12 || i == 13) ? 'no-clasifica' : '') %>">
+                        <td class="td-number bg-gray d-none">
+                            <%= teams[i].position %>
+                        </td>
+                        <td class="td-logo">
+                            <img src="<%= teams[i].imgUrl %>">
+                            <div>
+                                <%= teams[i].team %>
+                            </div>
+                        </td>
+                        <td class="td-number bg-gray">
+                            <%= teams[i].PJ %>
+                        </td>
+                        <td class="td-number">
+                            <%= teams[i].G %>
+                        </td>
+                        <td class="td-number">
+                            <%= teams[i].E %>
+                        </td>
+                        <td class="td-number">
+                            <%= teams[i].P %>
+                        </td>
+                        <td class="td-number d-none">
+                            <%= teams[i].GF %>
+                        </td>
+                        <td class="td-number d-none">
+                            <%= teams[i].GC %>
+                        </td>
+                        <td class="td-number d-none">
+                            <%= teams[i].DG %>
+                        </td>
+                        <td class="td-number bg-gray">
+                            <%= teams[i].points %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
         
-        .button {
-            color: black;
-            text-decoration: none;
-            background-color: #EEEEEE;
-            padding: 5px;
-            border: 1px solid;
-            float: right;
+        <div style="margin-top: 15px;">GRUPO B</div>
+        <table style="border-spacing: 0;">
+            <thead>
+                <tr class="tr-head">
+                    <th class="d-none">Pos</th>
+                    <th>Equipo</th>
+                    <th>PJ</th>
+                    <th>G</th>
+                    <th>E</th>
+                    <th>P</th>
+                    <th class="d-none">GF</th>
+                    <th class="d-none">GC</th>
+                    <th class="d-none">DG</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=14; i < teams.length; i++) { %>
+                    <tr
+                        class="<%= i==14 || i == 15 ? 'clasifica' : ((i == (teams.length - 1) || i == (teams.length - 2)) ? 'no-clasifica' : '') %>">
+                        <td class="td-number bg-gray d-none">
+                            <%= teams[i].position %>
+                        </td>
+                        <td class="td-logo">
+                            <img src="<%= teams[i].imgUrl %>">
+                            <div>
+                                <%= teams[i].team %>
+                            </div>
+                        </td>
+                        <td class="td-number bg-gray">
+                            <%= teams[i].PJ %>
+                        </td>
+                        <td class="td-number">
+                            <%= teams[i].G %>
+                        </td>
+                        <td class="td-number">
+                            <%= teams[i].E %>
+                        </td>
+                        <td class="td-number">
+                            <%= teams[i].P %>
+                        </td>
+                        <td class="td-number d-none">
+                            <%= teams[i].GF %>
+                        </td>
+                        <td class="td-number d-none">
+                            <%= teams[i].GC %>
+                        </td>
+                        <td class="td-number d-none">
+                            <%= teams[i].DG %>
+                        </td>
+                        <td class="td-number bg-gray">
+                            <%= teams[i].points %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+
+
+    <style>
+
+        h1{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
-        table,
+        body{
+            font-family: system-ui;
+        }
         th,
         td {
-            border: 1px solid black;
+            height: 35px;
         }
-
         .td-logo>img {
             float: left;
+            margin-right: 5px;
         }
-
         .td-logo>div {
-            float: left;
-            margin-left: 10px;
             min-width: 200px;
             height: 36px;
             line-height: 36px;
         }
-
         .td-number {
             text-align: center;
             width: 38px;
         }
-    
-        @media(max-width:400px) { 
-            .hide-mobile{
-                display:none;
+        .clasifica {
+            background-color: #98d598;
+        }
+        .no-clasifica {
+            background-color: #ffa4a4;
+        }
+        .div-table-content {
+            display: table;
+            margin: 0 auto;
+        }
+        .div-table-content>div {
+            background: rgb(38, 47, 62);
+            font-weight: bolder;
+            color: white;
+            padding: 10px;
+        }
+        .tr-head>th {
+            background: rgb(222, 226, 230);
+            font-weight: bolder;
+        }
+        .bg-gray{
+            background: rgba(0,0,0,0.1);
+        }
+        @media (max-width: 600px) {
+            .d-none {
+                display: none;
             }
         }
-        
     </style>
 </body>
 
