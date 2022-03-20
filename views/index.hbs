@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tabla de posiciones de Primera Division</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="description" content="Tabla de Posiciones de la Primera División de Argentina. Temporada Copa de la Liga Profesional 2022. Proyecto Mustan Juan B.">
+    <meta name="author" content="Juan Pablo Billoud" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="futbol,tabla,posicion,equipos,liga argentina" />
+    <meta name="copyright" content="Juan Pablo Billoud" />
+</head>
+
+<body>
+    <h1>Tabla de Equipos</h1>
+    <div class="div-table-content">
+        <div>GRUPO A</div>
+        <table style="border-spacing: 0;">
+            <thead>
+                <tr class="tr-head">
+                    <th class="d-none">Pos</th>
+                    <th>Equipo</th>
+                    <th>PJ</th>
+                    <th>G</th>
+                    <th>E</th>
+                    <th >P</th>
+                    <th class="d-none">GF</th>
+                    <th class="d-none">GC</th>
+                    <th class="d-none">DG</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each teamsA}}
+                    <tr
+                        class="{{posColor this.position}}">
+                        <td class="td-number bg-gray d-none">
+                         {{this.position}}
+                        </td>
+                        <td class="td-logo">
+                            <img src="{{this.imgUrl}}">
+                            <div>
+                                {{this.team}}
+                            </div>
+                        </td>
+                        <td class="td-number bg-gray">
+                            {{this.PJ}}
+                        </td>
+                        <td class="td-number">
+                            {{this.G}}
+                        </td>
+                        <td class="td-number">
+                            {{this.E}}
+                        </td>
+                        <td class="td-number">
+                            {{this.P}}
+                        </td>
+                        <td class="td-number d-none">
+                            {{this.GF}}
+                        </td>
+                        <td class="td-number d-none">
+                            {{this.GC}}
+                        </td>
+                        <td class="td-number d-none">
+                            {{this.DG}}
+                        </td>
+                        <td class="td-number bg-gray">
+                            {{this.points}}
+                        </td>
+                    </tr>
+                    {{/each}}
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 15px;">GRUPO B</div>
+        <table style="border-spacing: 0;">
+            <thead>
+                <tr class="tr-head">
+                    <th class="d-none">Pos</th>
+                    <th>Equipo</th>
+                    <th>PJ</th>
+                    <th>G</th>
+                    <th>E</th>
+                    <th>P</th>
+                    <th class="d-none">GF</th>
+                    <th class="d-none">GC</th>
+                    <th class="d-none">DG</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each teamsB}}
+                    <tr
+                        class="{{posColor this.position}}">
+                        <td class="td-number bg-gray d-none">
+                         {{this.position}}
+                        </td>
+                        <td class="td-logo">
+                            <img src="{{this.imgUrl}}">
+                            <div>
+                                {{this.team}}
+                            </div>
+                        </td>
+                        <td class="td-number bg-gray">
+                            {{this.PJ}}
+                        </td>
+                        <td class="td-number">
+                            {{this.G}}
+                        </td>
+                        <td class="td-number">
+                            {{this.E}}
+                        </td>
+                        <td class="td-number">
+                            {{this.P}}
+                        </td>
+                        <td class="td-number d-none">
+                            {{this.GF}}
+                        </td>
+                        <td class="td-number d-none">
+                            {{this.GC}}
+                        </td>
+                        <td class="td-number d-none">
+                            {{this.DG}}
+                        </td>
+                        <td class="td-number bg-gray">
+                            {{this.points}}
+                        </td>
+                    </tr>
+                    {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+
+    <style>
+
+        h1{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        body{
+            font-family: system-ui;
+        }
+        th,
+        td {
+            height: 35px;
+        }
+        .td-logo>img {
+            float: left;
+            margin-right: 5px;
+        }
+        .td-logo>div {
+            min-width: 250px;
+            height: 36px;
+            line-height: 36px;
+        }
+        .td-number {
+            text-align: center;
+            width: 38px;
+        }
+        .clasifica {
+            background-color: #98d598;
+        }
+        .no-clasifica {
+            background-color: #ffa4a4;
+        }
+        .div-table-content {
+            display: table;
+            margin: 0 auto;
+        }
+        .div-table-content>div {
+            background: rgb(38, 47, 62);
+            font-weight: bolder;
+            color: white;
+            padding: 10px;
+        }
+        .tr-head>th {
+            background: rgb(222, 226, 230);
+            font-weight: bolder;
+        }
+        .bg-gray{
+            background: rgba(0,0,0,0.1);
+        }
+        @media (max-width: 600px) {
+            .d-none {
+                display: none;
+            }
+        }
+    </style>
+</body>
+
+</html>
